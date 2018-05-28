@@ -49,7 +49,25 @@ NOTE 15 – BWmap should be constructed according to clause A.6.4.2.
 
 
 
+## A.6.1 Assumptions
+
+The following assumptions apply to the described flow: 
+
+- The farthest ONU is 20 km from the OLT. Pre-assigned delay is 0.
+- The OLT is not aware of the serial numbers of ONUs on the PON (discovered SN method).
+- The PLO length is 127 bytes (maximum) during ranging and 11 bytes (minimum ecommended) during normal operation.
+
+
+
+
+
+
+
 ## A.6.2 State O1
+
+During this state, the ONU attempts to attain frame synchronization, using the valid downstream frames transmitted by the OLT.
+
+The ONU searches for the PSync value bit-by-bit (an example of downstream frame structure is shown in clause A.5). Once two consecutive frames with a valid PSync value are found, the ONU clears the LOS/LOF error and transitions to state O2.
 
 
 
